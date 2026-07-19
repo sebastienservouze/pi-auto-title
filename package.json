@@ -1,0 +1,21 @@
+{
+  "name": "@nerisma/pi-auto-title",
+  "version": "0.1.0",
+  "description": "Renomme automatiquement une session Pi depuis son premier prompt.",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "extensions"
+  ],
+  "scripts": {
+    "test": "node --test --experimental-strip-types test/*.test.ts"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
