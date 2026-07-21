@@ -20,6 +20,23 @@ Rechargez Pi après l'installation :
 
 Aucune configuration ni commande nécessaire. Lancez simplement une session avec un premier prompt. Le titre apparaît dès que le modèle répond, sans ralentir votre flux.
 
+### Sélection du modèle
+
+L'extension choisit automatiquement le modèle le moins coûteux disponible parmi ceux que Pi a chargés (`modelRegistry.getAvailable()`). Le classement est le suivant :
+
+1. **Coût de sortie** (`cost.output`) — le modèle le moins cher à l'output est préféré.
+2. **Coût d'entrée** (`cost.input`) — en cas d'égalité, le moins cher à l'input.
+3. **Non-raisonnement** — les modèles sans *reasoning* sont favorisés, car ils consomment moins de tokens cachés.
+
+Si aucun modèle n'est disponible (aucun fournisseur configuré), le titre n'est pas généré — la session reste sans titre.
+
+La session de titrage est isolée de votre session principale :
+
+- `thinkingLevel: "off"` — pas de raisonnement coûteux.
+- `noTools: "all"` — aucun outil n'est chargé, la requête part directement au LLM.
+- `SessionManager.inMemory()` — aucune persistance, la session de titrage est jetable.
+- `void generateTitle(...)` — le titrage est lancé en tâche de fond, sans `await` ni blocage.
+
 ## Développement
 
 ```bash
