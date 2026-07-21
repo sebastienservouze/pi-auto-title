@@ -1,12 +1,13 @@
 {
   "name": "@nerisma/pi-auto-title",
   "version": "0.1.0",
-  "description": "Renomme automatiquement une session Pi depuis son premier prompt.",
+  "description": "Automatically names a Pi session from its first prompt.",
   "keywords": [
     "pi-package",
     "pi-extension",
     "auto-title",
-    "session-title"
+    "session-title",
+    "pi"
   ],
   "license": "MIT",
   "author": "Sébastien SERVOUZE <sebastien.servouze@gmail.com>",

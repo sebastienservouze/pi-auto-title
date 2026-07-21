@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Extension qui renomme automatiquement une session depuis le premier prompt utilisateur.
-- Sélection automatique du modèle le moins coûteux disponible.
-- Titre en français, 3 à 8 mots, sans bloquer la session.
+- Extension that automatically names a Pi session from its first user prompt.
+- Automatic selection of the cheapest available model.
+- Non-blocking title generation (fire-and-forget).
+- Language-aware titling: the title is generated in the same language as the prompt.
+- Customizable extra guidance via `PI_AUTO_TITLE_PROMPT` environment variable.
+- Notification on rename with title, model name, and elapsed time.
+- Notification on rename showing title, model name, and duration.

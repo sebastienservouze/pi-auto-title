@@ -52,7 +52,7 @@ async function generateTitle(prompt: string, ctx: ExtensionContext): Promise<str
     const title = normalizeSessionTitle(session.getLastAssistantText() ?? "");
     if (title) {
       const elapsed = Math.round((performance.now() - start) / 100) / 10;
-      ctx.ui.notify(`Session renommée : « ${title} » (${model.name ?? model.id}, ${elapsed}s)`, "info");
+      ctx.ui.notify(`Session titled: « ${title} » (${model.name ?? model.id}, ${elapsed}s)`, "info");
     }
     return title;
   } finally {
@@ -75,7 +75,7 @@ export default function registerAutoTitle(pi: ExtensionAPI): void {
     if (!prompt) return;
     attempted = true;
 
-    // Le premier prompt ne doit jamais attendre la génération du titre.
+    // The first prompt must never wait for title generation.
     void generateTitle(prompt, ctx)
       .then((title) => {
         if (title && !pi.getSessionName()) pi.setSessionName(title);
