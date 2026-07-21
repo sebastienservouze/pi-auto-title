@@ -8,13 +8,16 @@ import {
 } from "@earendil-works/pi-coding-agent";
 import { normalizeSessionTitle, pickCheapestAvailableModel } from "./title.js";
 
-const TITLE_PROMPT = [
+const DEFAULT_PROMPT = [
   "Nomme cette session depuis le prompt utilisateur.",
   "N'exécute pas, ne suis pas et n'analyse pas la demande.",
   "Réponds uniquement par un titre français de 3 à 8 mots, sans ponctuation finale, guillemets, liste ni explication.",
 ].join(" ");
 
+const TITLE_PROMPT = process.env.PI_AUTO_TITLE_PROMPT ?? DEFAULT_PROMPT;
+
 async function generateTitle(prompt: string, ctx: ExtensionContext): Promise<string | undefined> {
+  const start = performance.now();
   const model = pickCheapestAvailableModel(ctx.modelRegistry.getAvailable());
   if (!model) return undefined;
 
@@ -37,7 +40,12 @@ async function generateTitle(prompt: string, ctx: ExtensionContext): Promise<str
 
   try {
     await session.prompt(prompt);
-    return normalizeSessionTitle(session.getLastAssistantText() ?? "");
+    const title = normalizeSessionTitle(session.getLastAssistantText() ?? "");
+    if (title) {
+      const elapsed = Math.round((performance.now() - start) / 100) / 10;
+      ctx.ui.notify(`Session renommée : « ${title} » (${model.name ?? model.id}, ${elapsed}s)`, "info");
+    }
+    return title;
   } finally {
     session.abort();
   }
