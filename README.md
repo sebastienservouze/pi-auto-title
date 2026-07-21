@@ -60,14 +60,29 @@ export PI_AUTO_TITLE_GUIDANCE_PROMPT="Be enthusiastic — use upbeat language an
 
 Real examples (opencode-go/deepseek-v4-flash):
 
-| Guidance | Prompt (summary) | Title |
-|---|---|---|
-| *(none)* | Migrate 200 GB PostgreSQL to AWS RDS with zero downtime and full rollback | PostgreSQL zero downtime migration plan |
-| *(none)* | Refactor auth module to OAuth2 with Google, GitHub, Microsoft, backward compat for 200k users | OAuth2 Integration for Auth Module |
-| Be enthusiastic — upbeat language, one emoji at the end | Race condition in WebSocket handler causing duplicate messages on concurrent room joins | Fix race condition in WebSocket handler 🏎️ |
-| Be sarcastic and witty — mock the absurdity with dry humor, like a tired senior dev | CI pipeline takes 45 min because Docker caching was commented out six months ago with a TODO | 45-minute rebuild for readme fix |
-| Talk like a 5 year old — no technical terms, use baby words like boo-boo, owie | Multi-region Kubernetes cluster with automated failover and 30-second health checks | Big computer owie fix fast switch |
-| Roast me — savage comedian, one brutal punchline under 6 words | Spent three days debugging a CSS z-index issue on a modal hidden by parent overflow | Three days for a CSS bug |
+- **Guidance:** *(none)*  
+  **Prompt:** Migrate 200 GB PostgreSQL to AWS RDS with zero downtime and full rollback  
+  **Title:** *PostgreSQL zero downtime migration plan*
+
+- **Guidance:** *(none)*  
+  **Prompt:** Refactor auth module to OAuth2 with Google, GitHub, Microsoft, backward compat for 200k users  
+  **Title:** *OAuth2 Integration for Auth Module*
+
+- **Guidance:** Be enthusiastic — upbeat language, one emoji at the end  
+  **Prompt:** Race condition in WebSocket handler causing duplicate messages on concurrent room joins  
+  **Title:** *Fix race condition in WebSocket handler* 🏎️
+
+- **Guidance:** Be sarcastic and witty — mock the absurdity with dry humor, like a tired senior dev  
+  **Prompt:** CI pipeline takes 45 min because Docker caching was commented out six months ago with a TODO  
+  **Title:** *45-minute rebuild for readme fix*
+
+- **Guidance:** Talk like a 5 year old — no technical terms, use baby words like boo-boo, owie  
+  **Prompt:** Multi-region Kubernetes cluster with automated failover and 30-second health checks  
+  **Title:** *Big computer owie fix fast switch*
+
+- **Guidance:** Roast me — savage comedian, one brutal punchline under 6 words  
+  **Prompt:** Spent three days debugging a CSS z-index issue on a modal hidden by parent overflow  
+  **Title:** *Three days for a CSS bug*
 
 Guidance is a suggestion, not a guarantee. Creative styles are hit-or-miss with cheap models — test yours, and remember that a missing title is better than a slow one.
 
