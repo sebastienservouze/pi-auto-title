@@ -56,62 +56,32 @@ async function main() {
   console.log(`Model: ${model.provider}/${model.id} ($${model.cost.output}/M output)`);
   console.log();
 
+  const prompt = "I need to organize my tasks for today: reply to emails, prepare tomorrow’s presentation, buy groceries, and book a dentist appointment.";
   const tests: Array<{ guidance?: string; prompt: string; label: string }> = [
-    // --- English ---
     {
-      label: "en / none",
-      prompt: "I need to migrate a 200 GB PostgreSQL database from on-premise bare metal to AWS RDS with zero downtime, logical replication, and a full rollback plan in case the new replicas start lagging behind",
+      label: "none",
+      prompt,
     },
     {
-      label: "en / none",
-      prompt: "Help me refactor the authentication module to support OAuth2 with Google, GitHub and Microsoft providers while keeping backward compatibility with existing JWT-based sessions and not breaking the 200k active user sessions",
+      label: "5-year-old",
+      guidance: "Talk like a 5-year-old — use very simple words, be playful, and make the title sound like a little kid said it",
+      prompt,
     },
     {
-      label: "en / enthusiastic",
-      guidance: "Be enthusiastic — use upbeat, energetic language and add exactly one relevant emoji at the very end",
-      prompt: "We have a race condition in the WebSocket handler that causes duplicate messages when two users join the same chat room within 50ms of each other, and the deduplication logic only catches exact ID matches",
+      label: "roast",
+      guidance: "Roast the user mercilessly — deliver one savage comedian-style punchline under 6 words",
+      prompt,
     },
     {
-      label: "en / sarcastic",
-      guidance: "Be sarcastic and witty — mock the absurdity of the situation with dry, understated humor, like a tired senior dev",
-      prompt: "The CI pipeline takes 45 minutes to run because every job rebuilds all Docker images from scratch even for a one-line README change, and the caching layer was commented out six months ago with a TODO",
-    },
-    {
-      label: "en / 5yo",
-      guidance: "Talk like a 5 year old — imagine explaining to a toddler, no technical terms, use baby words like 'boo-boo', 'owie', 'big computer'",
-      prompt: "I need to set up a multi-region Kubernetes cluster with automated failover between us-east-1 and eu-west-1 using weighted DNS records and health checks that trigger within 30 seconds of a node failure",
-    },
-    {
-      label: "en / roast",
-      guidance: "Roast me hard — be a savage comedian delivering a single brutal punchline under 6 words",
-      prompt: "I spent three days debugging a CSS z-index issue on a modal that was already hidden by a parent with overflow hidden and I only figured it out after deleting half the codebase",
-    },
-    // --- Français ---
-    {
-      label: "fr / none",
-      prompt: "Je dois migrer une base PostgreSQL de 200 Go depuis un serveur bare metal on-premise vers AWS RDS avec zéro interruption, réplication logique et un plan de rollback complet au cas où les nouveaux réplicas prendraient du retard",
-    },
-    {
-      label: "fr / enthousiaste",
-      guidance: "Sois enthousiaste — utilise un langage énergique et ajoute exactement un emoji pertinent à la fin",
-      prompt: "On a une condition de concurrence dans le gestionnaire WebSocket qui provoque des messages en double quand deux utilisateurs rejoignent le même salon de chat à moins de 50 ms d'écart, et la déduplication ne capture que les correspondances exactes d'ID",
-    },
-    {
-      label: "fr / sarcastique",
-      guidance: "Sois sarcastique et piquant — moque-toi de l'absurdité de la situation avec un humour sec, comme un dev senior blasé",
-      prompt: "La CI prend 45 minutes parce que chaque job rebuild tous les images Docker from scratch même pour un changement d'une ligne dans le README, et la couche de cache a été commentée il y a six mois avec un TODO",
-    },
-    {
-      label: "fr / 5 ans",
-      guidance: "Parle comme un enfant de 5 ans — utilise des mots très simples qu'un tout-petit comprendrait, sois court et joueur",
-      prompt: "Je dois mettre en place un cluster Kubernetes multi-région avec basculement automatique entre us-east-1 et eu-west-1 en utilisant des enregistrements DNS pondérés et des health checks qui se déclenchent dans les 30 secondes après une panne de nœud",
-    },
-    {
-      label: "fr / vanne-moi",
-      guidance: "Vanne-moi sévèrement — sois un humoriste sauvage qui balance une punchline brutale en moins de 6 mots",
-      prompt: "J'ai passé trois jours à déboguer un problème de z-index CSS sur une modale qui était déjà cachée par un parent avec overflow hidden et je l'ai compris seulement après avoir supprimé la moitié du code",
+      label: "dramatic",
+      guidance: "Sound like an overdramatic best friend — turn this tiny bug into an epic tragedy, with playful exaggeration",
+      prompt,
     },
   ];
+
+  if (new Set(tests.map((test) => test.prompt)).size !== 1) {
+    throw new Error("Example cases must reuse the same prompt");
+  }
 
   for (const t of tests) {
     const start = performance.now();

@@ -63,29 +63,20 @@ Be specific: cheap models respond better to explicit directions than vague vibes
 export PI_AUTO_TITLE_GUIDANCE_PROMPT="Be enthusiastic — use upbeat language and add one relevant emoji at the end"
 ```
 
-Real examples (opencode-go/deepseek-v4-flash):
+Here is the same prompt with different guidance (opencode-go/deepseek-v4-flash):
 
-**Without guidance**
+**Prompt:**
 
-- **Prompt:** `"Migrate 200 GB PostgreSQL to AWS RDS with zero downtime and full rollback"`  
-  **Session name:** `PostgreSQL zero downtime migration plan`
-- **Prompt:** `"Refactor auth module to OAuth2 with Google, GitHub, Microsoft, backward compat for 200k users"`  
-  **Session name:** `OAuth2 Integration for Auth Module`
+> `I need to organize my tasks for today: reply to emails, prepare tomorrow’s presentation, buy groceries, and book a dentist appointment.`
 
-**With guidance**
+| Guidance | Session title |
+| --- | --- |
+| None | `Daily Task Organization List` |
+| `Talk like a 5-year-old — use very simple words, be playful, and make the title sound like a little kid said it` | `My To-Do List For Today Fun` |
+| `Roast the user mercilessly — deliver one savage comedian-style punchline under 6 words` | `Congratulations on adulting` |
+| `Sound like an overdramatic best friend — turn this tiny bug into an epic tragedy, with playful exaggeration` | `Drowning in Today's Trivial Chore Chaos` |
 
-- **Guidance:** `Be enthusiastic — upbeat language, one emoji at the end`  
-  **Prompt:** `"Race condition in WebSocket handler causing duplicate messages on concurrent room joins"`  
-  **Session name:** `Fix race condition in WebSocket handler` 🏎️
-- **Guidance:** `Be sarcastic and witty — mock the absurdity with dry humor, like a tired senior dev`  
-  **Prompt:** `"CI pipeline takes 45 min because Docker caching was commented out six months ago with a TODO"`  
-  **Session name:** `45-minute rebuild for readme fix`
-- **Guidance:** `Talk like a 5 year old — no technical terms, use baby words like boo-boo, owie`  
-  **Prompt:** `"Multi-region Kubernetes cluster with automated failover and 30-second health checks"`  
-  **Session name:** `Big computer owie fix fast switch`
-- **Guidance:** `Roast me — savage comedian, one brutal punchline under 6 words`  
-  **Prompt:** `"Spent three days debugging a CSS z-index issue on a modal hidden by parent overflow"`  
-  **Session name:** `Three days for a CSS bug`
+Same prompt, completely different personalities: with a little creativity, your session title can cheer you on, roast you, or turn your to-do list into a disaster movie.
 
 Guidance is a suggestion, not a guarantee. Creative styles are hit-or-miss with cheap models — test yours, and remember that a missing title is better than a slow one.
 
