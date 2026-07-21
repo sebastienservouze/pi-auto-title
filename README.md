@@ -1,16 +1,21 @@
 <div align="center"><pre>
 ██████╗ ██╗       █████╗ ██╗   ██╗████████╗ ██████╗    ████████╗██╗████████╗██╗     ███████╗
 ██╔══██╗██║      ██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗   ╚══██╔══╝██║╚══██╔══╝██║     ██╔════╝
-██████╔╝██║█████╗███████║██║   ██║   ██║   ██║   ██║█████╗██║   ██║   ██║   ██║     █████╗
-██╔═══╝ ██║╚════╝██╔══██║██║   ██║   ██║   ██║   ██║╚════╝██║   ██║   ██║   ██║     ██╔══╝
+██████╔╝██║█████╗███████║██║   ██║   ██║   ██║   ██║█████╗██║   ██║   ██║   ██║     █████╗  
+██╔═══╝ ██║╚════╝██╔══██║██║   ██║   ██║   ██║   ██║╚════╝██║   ██║   ██║   ██║     ██╔══╝  
 ██║     ██║      ██║  ██║╚██████╔╝   ██║   ╚██████╔╝      ██║   ██║   ██║   ███████╗███████╗
 ╚═╝     ╚═╝      ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝       ╚═╝   ╚═╝   ╚═╝   ╚══════╝╚══════╝
+                                                                                            
 </pre></div>
+
+<div align="center">
+
+> Auto-names your Pi sessions from their first prompt, using the cheapest available model — no config needed.
 
 [![npm](https://img.shields.io/npm/v/%40nerisma%2Fpi-auto-title?style=flat&label=npm)](https://www.npmjs.com/package/@nerisma/pi-auto-title)
 [![license](https://img.shields.io/github/license/sebastienservouze/pi-auto-title?style=flat)](https://github.com/sebastienservouze/pi-auto-title/blob/main/LICENSE)
 
-> Auto-names your Pi sessions from their first prompt, using the cheapest available model — no config needed.
+</div>
 
 ## Install
 
