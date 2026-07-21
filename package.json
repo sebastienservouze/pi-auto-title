@@ -2,13 +2,27 @@
   "name": "@nerisma/pi-auto-title",
   "version": "0.1.0",
   "description": "Renomme automatiquement une session Pi depuis son premier prompt.",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "auto-title",
+    "session-title"
+  ],
   "license": "MIT",
+  "author": "Sébastien SERVOUZE <sebastien.servouze@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastienservouze/pi-auto-title.git"
+  },
   "type": "module",
   "files": [
-    "extensions"
+    "extensions",
+    "README.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
-    "test": "node --test --experimental-strip-types test/*.test.ts"
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON test/*.test.ts"
   },
   "pi": {
     "extensions": [
@@ -17,5 +31,12 @@
   },
   "peerDependencies": {
     "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
