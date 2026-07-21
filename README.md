@@ -58,7 +58,7 @@ Here is the same prompt with different guidance (opencode-go/deepseek-v4-flash):
 
 Same prompt, completely different personalities: with a little creativity, your session title can cheer you on, roast you, or turn your to-do list into a disaster movie.
 
-## Configuration
+## Configuration (not mandatory)
 
 ### Model
 
