@@ -1,6 +1,6 @@
 {
   "name": "@nerisma/pi-auto-title",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Automatically names a Pi session from its first prompt.",
   "keywords": [
     "pi-package",
