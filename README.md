@@ -32,7 +32,7 @@ export PI_AUTO_TITLE_MODEL=openai/gpt-4o-mini
 
 If the model is not found, it falls back to the cheapest and logs a warning.
 
-### Custom guidance
+### A little fun
 
 Add style instructions via `PI_AUTO_TITLE_GUIDANCE_PROMPT`. It is appended to the system prompt — the core "do not execute" rule can never be removed.
 
