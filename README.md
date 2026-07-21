@@ -65,41 +65,27 @@ export PI_AUTO_TITLE_GUIDANCE_PROMPT="Be enthusiastic — use upbeat language an
 
 Real examples (opencode-go/deepseek-v4-flash):
 
-<div style="border: 1px solid #30363d; border-radius: 6px; padding: 12px 16px; margin: 10px 0;">
-  <p style="margin: 0 0 6px 0; color: #8b949e; font-size: 12px;"><strong>Guidance:</strong> <em>(none)</em></p>
-  <p style="margin: 0 0 6px 0;">"Migrate 200 GB PostgreSQL to AWS RDS with zero downtime and full rollback"</p>
-  <p style="margin: 0;">→ <strong>PostgreSQL zero downtime migration plan</strong></p>
-</div>
+**Without guidance**
 
-<div style="border: 1px solid #30363d; border-radius: 6px; padding: 12px 16px; margin: 10px 0;">
-  <p style="margin: 0 0 6px 0; color: #8b949e; font-size: 12px;"><strong>Guidance:</strong> <em>(none)</em></p>
-  <p style="margin: 0 0 6px 0;">"Refactor auth module to OAuth2 with Google, GitHub, Microsoft, backward compat for 200k users"</p>
-  <p style="margin: 0;">→ <strong>OAuth2 Integration for Auth Module</strong></p>
-</div>
+- **Prompt:** "Migrate 200 GB PostgreSQL to AWS RDS with zero downtime and full rollback"  
+  → PostgreSQL zero downtime migration plan
+- **Prompt:** "Refactor auth module to OAuth2 with Google, GitHub, Microsoft, backward compat for 200k users"  
+  → OAuth2 Integration for Auth Module
 
-<div style="border: 1px solid #30363d; border-radius: 6px; padding: 12px 16px; margin: 10px 0;">
-  <p style="margin: 0 0 6px 0; color: #8b949e; font-size: 12px;"><strong>Guidance:</strong> <code>Be enthusiastic — upbeat language, one emoji at the end</code></p>
-  <p style="margin: 0 0 6px 0;">"Race condition in WebSocket handler causing duplicate messages on concurrent room joins"</p>
-  <p style="margin: 0;">→ <strong>Fix race condition in WebSocket handler</strong> 🏎️</p>
-</div>
+**With guidance**
 
-<div style="border: 1px solid #30363d; border-radius: 6px; padding: 12px 16px; margin: 10px 0;">
-  <p style="margin: 0 0 6px 0; color: #8b949e; font-size: 12px;"><strong>Guidance:</strong> <code>Be sarcastic and witty — mock the absurdity with dry humor, like a tired senior dev</code></p>
-  <p style="margin: 0 0 6px 0;">"CI pipeline takes 45 min because Docker caching was commented out six months ago with a TODO"</p>
-  <p style="margin: 0;">→ <strong>45-minute rebuild for readme fix</strong></p>
-</div>
-
-<div style="border: 1px solid #30363d; border-radius: 6px; padding: 12px 16px; margin: 10px 0;">
-  <p style="margin: 0 0 6px 0; color: #8b949e; font-size: 12px;"><strong>Guidance:</strong> <code>Talk like a 5 year old — no technical terms, use baby words like boo-boo, owie</code></p>
-  <p style="margin: 0 0 6px 0;">"Multi-region Kubernetes cluster with automated failover and 30-second health checks"</p>
-  <p style="margin: 0;">→ <strong>Big computer owie fix fast switch</strong></p>
-</div>
-
-<div style="border: 1px solid #30363d; border-radius: 6px; padding: 12px 16px; margin: 10px 0;">
-  <p style="margin: 0 0 6px 0; color: #8b949e; font-size: 12px;"><strong>Guidance:</strong> <code>Roast me — savage comedian, one brutal punchline under 6 words</code></p>
-  <p style="margin: 0 0 6px 0;">"Spent three days debugging a CSS z-index issue on a modal hidden by parent overflow"</p>
-  <p style="margin: 0;">→ <strong>Three days for a CSS bug</strong></p>
-</div>
+- **Guidance:** `Be enthusiastic — upbeat language, one emoji at the end`  
+  **Prompt:** "Race condition in WebSocket handler causing duplicate messages on concurrent room joins"  
+  → Fix race condition in WebSocket handler 🏎️
+- **Guidance:** `Be sarcastic and witty — mock the absurdity with dry humor, like a tired senior dev`  
+  **Prompt:** "CI pipeline takes 45 min because Docker caching was commented out six months ago with a TODO"  
+  → 45-minute rebuild for readme fix
+- **Guidance:** `Talk like a 5 year old — no technical terms, use baby words like boo-boo, owie`  
+  **Prompt:** "Multi-region Kubernetes cluster with automated failover and 30-second health checks"  
+  → Big computer owie fix fast switch
+- **Guidance:** `Roast me — savage comedian, one brutal punchline under 6 words`  
+  **Prompt:** "Spent three days debugging a CSS z-index issue on a modal hidden by parent overflow"  
+  → Three days for a CSS bug
 
 Guidance is a suggestion, not a guarantee. Creative styles are hit-or-miss with cheap models — test yours, and remember that a missing title is better than a slow one.
 
