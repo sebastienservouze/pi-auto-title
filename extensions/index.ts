@@ -14,14 +14,34 @@ const CORE_PROMPT = [
   "Detect the language and respond ONLY with the title — 3 to 8 words, no punctuation, no quotes, no markdown.",
 ].join("\n");
 
-const EXTRA_GUIDANCE = process.env.PI_AUTO_TITLE_PROMPT?.trim();
+const EXTRA_GUIDANCE = process.env.PI_AUTO_TITLE_GUIDANCE_PROMPT?.trim();
 const TITLE_PROMPT = EXTRA_GUIDANCE
   ? `${CORE_PROMPT}\n\nExtra guidance: ${EXTRA_GUIDANCE}`
   : CORE_PROMPT;
 
+/** Parse PI_AUTO_TITLE_MODEL (format "provider/model") and look it up in the registry. */
+function resolveModel(ctx: ExtensionContext) {
+  const spec = process.env.PI_AUTO_TITLE_MODEL?.trim();
+  if (!spec) return pickCheapestAvailableModel(ctx.modelRegistry.getAvailable());
+
+  const sep = spec.lastIndexOf("/");
+  if (sep <= 0) {
+    ctx.ui.notify(`PI_AUTO_TITLE_MODEL: invalid format "${spec}", expected provider/model — falling back to cheapest`, "warning");
+    return pickCheapestAvailableModel(ctx.modelRegistry.getAvailable());
+  }
+
+  const provider = spec.slice(0, sep);
+  const modelId = spec.slice(sep + 1);
+  const found = ctx.modelRegistry.find(provider, modelId);
+  if (found) return found;
+
+  ctx.ui.notify(`PI_AUTO_TITLE_MODEL="${spec}" not found, falling back to cheapest`, "warning");
+  return pickCheapestAvailableModel(ctx.modelRegistry.getAvailable());
+}
+
 async function generateTitle(prompt: string, ctx: ExtensionContext): Promise<string | undefined> {
   const start = performance.now();
-  const model = pickCheapestAvailableModel(ctx.modelRegistry.getAvailable());
+  const model = resolveModel(ctx);
   if (!model) return undefined;
 
   const loader = new DefaultResourceLoader({
