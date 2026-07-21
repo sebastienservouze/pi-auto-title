@@ -68,7 +68,7 @@ async function generateTitle(prompt: string, ctx: ExtensionContext): Promise<str
       const elapsed = Math.round((performance.now() - start) / 100) / 10;
       const cost = session.getSessionStats().cost;
       const costStr = cost > 0 ? `, $${cost.toFixed(6).replace(/\.?0+$/, "")}` : "";
-      ctx.ui.notify(`\x1b[36mSession titled: « ${title} » (${model.name ?? model.id}, ${elapsed}s${costStr})\x1b[0m`, "info");
+      ctx.ui.notify(`Session titled: « ${title} » (${model.name ?? model.id}, ${elapsed}s${costStr})`, "info");
     }
     return title;
   } finally {
