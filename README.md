@@ -12,7 +12,7 @@
 
 <div align="center">
 
-Auto-names your Pi sessions from their first prompt, using the cheapest available model. no config needed.
+Auto-names your Pi sessions from their first prompt, using the cheapest available model. No config needed. Roasting encouraged.
 
 <p style="color: #8b949e; font-size: 13px; margin: 0;">You type:</p>
 <p style="margin: 4px 0 12px 0;"><em>"We need to refactor the entire authentication layer to support OAuth2 with Google, GitHub, and Microsoft, while keeping backward compat for 200k users on the legacy password flow"</em></p>
@@ -39,21 +39,7 @@ Type your first prompt. The title appears a second later, without blocking your 
 
 No title is generated if no model is available. The session stays unnamed.
 
-## Configuration
-
-### Model
-
-By default, the cheapest available model is used (sorted by output cost, then input cost, non-reasoning preferred).
-
-Override with `PI_AUTO_TITLE_MODEL` (format `provider/model`):
-
-```bash
-export PI_AUTO_TITLE_MODEL=openai/gpt-4o-mini
-```
-
-If the model is not found, it falls back to the cheapest and logs a warning.
-
-### A little fun
+### Play with it
 
 Add style instructions via `PI_AUTO_TITLE_GUIDANCE_PROMPT`. It is appended to the system prompt. The core "do not execute" rule can never be removed.
 
@@ -67,7 +53,7 @@ Here is the same prompt with different guidance (opencode-go/deepseek-v4-flash):
 
 **Prompt:**
 
-> `I need to organize my tasks for today: reply to emails, prepare tomorrow’s presentation, buy groceries, and book a dentist appointment.`
+> I need to organize my tasks for today: reply to emails, prepare tomorrow’s presentation, buy groceries, and book a dentist appointment.
 
 | Guidance | Session title |
 | --- | --- |
@@ -79,6 +65,20 @@ Here is the same prompt with different guidance (opencode-go/deepseek-v4-flash):
 Same prompt, completely different personalities: with a little creativity, your session title can cheer you on, roast you, or turn your to-do list into a disaster movie.
 
 Guidance is a suggestion, not a guarantee. Creative styles are hit-or-miss with cheap models. Test yours, and remember that a missing title is better than a slow one.
+
+## Configuration
+
+### Model
+
+By default, the cheapest available model is used (sorted by output cost, then input cost, non-reasoning preferred).
+
+Override with `PI_AUTO_TITLE_MODEL` (format `provider/model`):
+
+```bash
+export PI_AUTO_TITLE_MODEL=openai/gpt-4o-mini
+```
+
+If the model is not found, it falls back to the cheapest and logs a warning.
 
 ## How it works
 
