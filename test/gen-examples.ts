@@ -13,7 +13,7 @@ const CORE_PROMPT = [
   "Detect the language and respond ONLY with the title — 3 to 8 words, no punctuation, no quotes, no markdown.",
 ].join("\n");
 
-async function generateTitle(prompt: string, model: any, guidance?: string): Promise<string | undefined> {
+async function generateTitle(prompt: string, model: any, guidance?: string): Promise<{ title?: string; cost: number }> {
   const sysPrompt = guidance
     ? `${CORE_PROMPT}\n\nExtra guidance: ${guidance}`
     : CORE_PROMPT;
@@ -37,7 +37,9 @@ async function generateTitle(prompt: string, model: any, guidance?: string): Pro
 
   try {
     await session.prompt(`Title this message:\n\n---\n${prompt}\n---`);
-    return normalizeSessionTitle(session.getLastAssistantText() ?? "");
+    const title = normalizeSessionTitle(session.getLastAssistantText() ?? "");
+    const cost = session.getSessionStats().cost;
+    return { title, cost };
   } finally {
     session.abort();
   }
@@ -113,9 +115,10 @@ async function main() {
 
   for (const t of tests) {
     const start = performance.now();
-    const title = await generateTitle(t.prompt, model, t.guidance);
+    const { title, cost } = await generateTitle(t.prompt, model, t.guidance);
     const elapsed = Math.round((performance.now() - start) / 100) / 10;
-    console.log(`[${t.label.padEnd(14)}] ${title ?? "(no title)"}  (${elapsed}s)`);
+    const costStr = cost > 0 ? ` $${cost.toFixed(6).replace(/\.?0+$/, "")}` : "";
+    console.log(`[${t.label.padEnd(14)}] ${title ?? "(no title)"}  (${elapsed}s${costStr})`);
   }
 
   process.exit(0);

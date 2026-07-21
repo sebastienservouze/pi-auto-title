@@ -14,7 +14,7 @@ pi install npm:@nerisma/pi-auto-title
 
 Type your first prompt. The title appears a second later, without blocking your session.
 
-> Session titled: « OAuth2 Integration for Auth Module » (deepseek-v4-flash, 1.4s)
+> Session titled: « OAuth2 Integration for Auth Module » (deepseek-v4-flash, 1.4s, $0.0003)
 
 No title is generated if no model is available — the session stays unnamed.
 
