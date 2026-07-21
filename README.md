@@ -105,25 +105,25 @@ Possible result:
 
 > Session titled: « 🎨 Add Dark Mode to Settings » (Claude 3 Haiku, 1.4s)
 
-Some guidance ideas to try:
+Some guidance ideas to try (be specific — cheap models need explicit instructions):
 
 | Guidance | Effect |
 |---|---|
-| `Talk like a 5 year old` | Whimsical, simple vocabulary |
-| `Be sarcastic` | Titles with an edge |
-| `Be enthusiastic, use emojis` | Fun, energetic titles |
-| `Roast me` | Titles that tease the prompt |
+| `Be enthusiastic — use upbeat language and add one relevant emoji at the end` | Fun, energetic titles with emoji |
+| `Be sarcastic and witty — mock the absurdity with dry humor, like a tired senior dev` | Titles with an edge |
+| `Talk like a 5 year old — no technical terms, use baby words like boo-boo, owie` | Whimsical, toddler vocabulary |
+| `Roast me — savage comedian, one brutal punchline under 6 words` | Titles that tease the prompt |
 
 Real examples generated through the extension's own code path (opencode-go/deepseek-v4-flash):
 
 | Guidance | Prompt (summary) | Generated title |
 |---|---|---|
-| *(none)* | Migrate 200 GB PostgreSQL to AWS RDS with zero downtime and full rollback | PostgreSQL migration to AWS RDS rollback |
-| *(none)* | Refactor auth module to OAuth2 with Google, GitHub, Microsoft, backward compat for 200k users | Refactor OAuth2 auth keeping backward compatibility |
-| `Be enthusiastic, use emojis when appropriate` | Race condition in WebSocket handler causing duplicate messages on concurrent room joins | Debugging WebSocket Race Condition 🐞 |
-| `Be sarcastic` | CI pipeline takes 45 min because Docker caching was commented out six months ago with a TODO | Classic Six-Month-Old TODO Strike Again |
-| `Talk like a 5 year old` | Multi-region Kubernetes cluster with automated failover and 30-second health checks | Big Kubernetes cluster with failover |
-| `Roast me` | Spent three days debugging a CSS z-index issue on a modal hidden by parent overflow | Three Days Debugging a Hidden Modal |
+| *(none)* | Migrate 200 GB PostgreSQL to AWS RDS with zero downtime and full rollback | PostgreSQL zero downtime migration plan |
+| *(none)* | Refactor auth module to OAuth2 with Google, GitHub, Microsoft, backward compat for 200k users | OAuth2 Integration for Auth Module |
+| `Be enthusiastic, use emojis when appropriate` | Race condition in WebSocket handler causing duplicate messages on concurrent room joins | Fix race condition in WebSocket handler 🏎️ |
+| `Be sarcastic and witty, like a tired senior dev` | CI pipeline takes 45 min because Docker caching was commented out six months ago with a TODO | 45-minute rebuild for readme fix |
+| `Talk like a 5 year old, no technical terms, use baby words` | Multi-region Kubernetes cluster with automated failover and 30-second health checks | Big computer owie fix fast switch |
+| `Roast me, savage comedian, one punchline under 6 words` | Spent three days debugging a CSS z-index issue on a modal hidden by parent overflow | Three days for a CSS bug |
 
 Guidance is a suggestion, not a guarantee. Creative styles are hit-or-miss with cheap
 models — test with the style you want, and remember that a missing title is better than
