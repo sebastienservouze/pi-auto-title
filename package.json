@@ -19,7 +19,8 @@
   "files": [
     "extensions",
     "README.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "LICENSE"
   ],
   "scripts": {
     "typecheck": "tsc --noEmit",
