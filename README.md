@@ -67,25 +67,25 @@ Real examples (opencode-go/deepseek-v4-flash):
 
 **Without guidance**
 
-- **Prompt:** "Migrate 200 GB PostgreSQL to AWS RDS with zero downtime and full rollback"  
-  → PostgreSQL zero downtime migration plan
-- **Prompt:** "Refactor auth module to OAuth2 with Google, GitHub, Microsoft, backward compat for 200k users"  
-  → OAuth2 Integration for Auth Module
+- **Prompt:** `"Migrate 200 GB PostgreSQL to AWS RDS with zero downtime and full rollback"`  
+  **Session name:** PostgreSQL zero downtime migration plan
+- **Prompt:** `"Refactor auth module to OAuth2 with Google, GitHub, Microsoft, backward compat for 200k users"`  
+  **Session name:** OAuth2 Integration for Auth Module
 
 **With guidance**
 
 - **Guidance:** `Be enthusiastic — upbeat language, one emoji at the end`  
-  **Prompt:** "Race condition in WebSocket handler causing duplicate messages on concurrent room joins"  
-  → Fix race condition in WebSocket handler 🏎️
+  **Prompt:** `"Race condition in WebSocket handler causing duplicate messages on concurrent room joins"`  
+  **Session name:** Fix race condition in WebSocket handler 🏎️
 - **Guidance:** `Be sarcastic and witty — mock the absurdity with dry humor, like a tired senior dev`  
-  **Prompt:** "CI pipeline takes 45 min because Docker caching was commented out six months ago with a TODO"  
-  → 45-minute rebuild for readme fix
+  **Prompt:** `"CI pipeline takes 45 min because Docker caching was commented out six months ago with a TODO"`  
+  **Session name:** 45-minute rebuild for readme fix
 - **Guidance:** `Talk like a 5 year old — no technical terms, use baby words like boo-boo, owie`  
-  **Prompt:** "Multi-region Kubernetes cluster with automated failover and 30-second health checks"  
-  → Big computer owie fix fast switch
+  **Prompt:** `"Multi-region Kubernetes cluster with automated failover and 30-second health checks"`  
+  **Session name:** Big computer owie fix fast switch
 - **Guidance:** `Roast me — savage comedian, one brutal punchline under 6 words`  
-  **Prompt:** "Spent three days debugging a CSS z-index issue on a modal hidden by parent overflow"  
-  → Three days for a CSS bug
+  **Prompt:** `"Spent three days debugging a CSS z-index issue on a modal hidden by parent overflow"`  
+  **Session name:** Three days for a CSS bug
 
 Guidance is a suggestion, not a guarantee. Creative styles are hit-or-miss with cheap models — test yours, and remember that a missing title is better than a slow one.
 
