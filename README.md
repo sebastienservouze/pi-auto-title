@@ -39,15 +39,9 @@ Type your first prompt. The title appears a second later, without blocking your 
 
 No title is generated if no model is available. The session stays unnamed.
 
-### Play with it
+## Have Fun
 
-Add style instructions via `PI_AUTO_TITLE_GUIDANCE_PROMPT`. It is appended to the system prompt. The core "do not execute" rule can never be removed.
-
-Be specific: cheap models respond better to explicit directions than vague vibes.
-
-```bash
-export PI_AUTO_TITLE_GUIDANCE_PROMPT="Roast the user mercilessly. Deliver one savage comedian-style punchline under 6 words"
-```
+Add style instructions via `PI_AUTO_TITLE_GUIDANCE_PROMPT`. It is appended to the system prompt used by the renaming session. Core renaming rules won't be enforced by this.
 
 Here is the same prompt with different guidance (opencode-go/deepseek-v4-flash):
 
@@ -55,7 +49,7 @@ Here is the same prompt with different guidance (opencode-go/deepseek-v4-flash):
 
 > I need to organize my tasks for today: reply to emails, prepare tomorrow’s presentation, buy groceries, and book a dentist appointment.
 
-| Guidance | Session title |
+| Guidance Prompt | Session Title |
 | --- | --- |
 | None | `Daily Task Organization List` |
 | `Talk like a 5-year-old. Use very simple words, be playful, and make the title sound like a little kid said it` | `My To-Do List For Today Fun` |
@@ -63,8 +57,6 @@ Here is the same prompt with different guidance (opencode-go/deepseek-v4-flash):
 | `Sound like an overdramatic best friend. Turn this tiny bug into an epic tragedy, with playful exaggeration` | `Drowning in Today's Trivial Chore Chaos` |
 
 Same prompt, completely different personalities: with a little creativity, your session title can cheer you on, roast you, or turn your to-do list into a disaster movie.
-
-Guidance is a suggestion, not a guarantee. Creative styles are hit-or-miss with cheap models. Test yours, and remember that a missing title is better than a slow one.
 
 ## Configuration
 
@@ -79,6 +71,14 @@ export PI_AUTO_TITLE_MODEL=openai/gpt-4o-mini
 ```
 
 If the model is not found, it falls back to the cheapest and logs a warning.
+
+### Guidance
+
+Be specific: cheap models respond better to explicit directions than vague vibes.
+
+```bash
+export PI_AUTO_TITLE_GUIDANCE_PROMPT="Roast the user mercilessly. Deliver one savage comedian-style punchline under 6 words"
+```
 
 ## How it works
 
