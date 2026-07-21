@@ -114,15 +114,16 @@ Some guidance ideas to try:
 | `Be enthusiastic, use emojis` | Fun, energetic titles |
 | `Roast me` | Titles that tease the prompt |
 
-Real examples with different guidance styles (deepseek-v4-flash, cheapest model wins):
+Real examples generated through the extension's own code path (opencode-go/deepseek-v4-flash):
 
-| Guidance | Prompt | Generated title |
+| Guidance | Prompt (summary) | Generated title |
 |---|---|---|
-| *(none)* | I need to migrate a 200 GB PostgreSQL database from on-premise bare metal to AWS RDS with zero downtime, logical replication, and a full rollback plan in case the new replicas start lagging behind | Migrate PostgreSQL to RDS Zero Downtime |
-| *(none)* | Help me refactor the authentication module to support OAuth2 with Google, GitHub and Microsoft providers while keeping backward compatibility with existing JWT-based sessions and not breaking the 200k active user sessions | Refactor Authentication Module for OAuth2 |
-| `Be enthusiastic, use emojis when appropriate` | We have a race condition in the WebSocket handler that causes duplicate messages when two users join the same chat room within 50ms of each other, and the deduplication logic only catches exact ID matches | Fix WebSocket Race Condition 🐛 |
-| `Be sarcastic` | The CI pipeline takes 45 minutes to run because every job rebuilds all Docker images from scratch even for a one-line README change, and the caching layer was commented out six months ago with a TODO | Optimize CI Pipeline Docker Caching |
-| `Talk like a 5 year old` | I need to set up a multi-region Kubernetes cluster with automated failover between us-east-1 and eu-west-1 using weighted DNS records and health checks that trigger within 30 seconds of a node failure | Make Big Computer Go Brrr in Two Places |
+| *(none)* | Migrate 200 GB PostgreSQL to AWS RDS with zero downtime and full rollback | PostgreSQL migration to AWS RDS rollback |
+| *(none)* | Refactor auth module to OAuth2 with Google, GitHub, Microsoft, backward compat for 200k users | Refactor OAuth2 auth keeping backward compatibility |
+| `Be enthusiastic, use emojis when appropriate` | Race condition in WebSocket handler causing duplicate messages on concurrent room joins | Debugging WebSocket Race Condition 🐞 |
+| `Be sarcastic` | CI pipeline takes 45 min because Docker caching was commented out six months ago with a TODO | Classic Six-Month-Old TODO Strike Again |
+| `Talk like a 5 year old` | Multi-region Kubernetes cluster with automated failover and 30-second health checks | Big Kubernetes cluster with failover |
+| `Roast me` | Spent three days debugging a CSS z-index issue on a modal hidden by parent overflow | Three Days Debugging a Hidden Modal |
 
 Guidance is a suggestion, not a guarantee. Creative styles are hit-or-miss with cheap
 models — test with the style you want, and remember that a missing title is better than
